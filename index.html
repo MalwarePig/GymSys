@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>
+		Lion
+	</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!------incluir cabezera navegacion----->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Boostrap 4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+	<!------ JQUERY PARA USAR AJAX ----->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="./xlsxfullmin.js"></script>
+	<script type="text/javascript" src="./FileSaver.js"></script>
+	<script type="text/javascript" src="./Logica.js"></script>
+	<!-- iconos -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-----------------------------------------------     FECHAS MOMENTS     ---------------------------------------------------------------->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+	<!-- GENERAR EXCEL -->
+	<script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script><!-- GENERAR EXCEL -->
+	<!-- google api -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+</head>
+
+<body onload="DashboardStatus()">
+	<div class="row row-cols-2 g-0  justify-content-md-center mt-2">
+		<div class="col-sm-auto col-md-2">
+			<div class="container text-center shadow bg-body-tertiary rounded pt-4">
+
+				<div class="container text-center">
+					<p class="text-center font-weight-bold bg-dark text-white">Menu</p>
+					<div class="row">
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<a href="/wh_Salidas" class="stretched-link"><i
+											class="fa-solid fa-people-group fa-beat fa-xl"></i></a>
+								</div>
+								<div class="card-footer bg-transparent border-info">Inscripciones</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<a href="/wh_Salidas" class="stretched-link"><i
+											class="fa-solid fa-cart-shopping fa-beat fa-xl"></i> </a>
+								</div>
+								<div class="card-footer bg-transparent border-info">Ventas</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<a href="/ExistenciasBasico" class="stretched-link"><i
+											class="fa-solid fa-user-pen fa-beat fa-xl"></i></a>
+								</div>
+								<div class="card-footer bg-transparent border-info">Registrar cliente</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<a href="/ExistenciasBasico" class="stretched-link"><i
+											class="fa-solid fa-bottle-water fa-beat fa-xl"></i></a>
+								</div>
+								<div class="card-footer bg-transparent border-info">Registrar articulo</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<a href="/ReporteConsumos" class="stretched-link"><i
+											class="fa-solid fa-file-invoice-dollar fa-beat fa-xl"></i> </a>
+								</div>
+								<div class="card-footer bg-transparent border-info">Reportes</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+								data-bs-target="#ModalAlumnado">
+								Launch demo modal
+							</button>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4 col-md-9 ">
+			<div class="container text-center shadow bg-body-tertiary rounded pt-4">
+
+				<!-- Tarjetas -->
+				<div class="container text-center">
+					<div class="row">
+						<p class="text-center font-weight-bold bg-dark text-white">Resumen de alumnado</p>
+						<div class="col">
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<h5 class="card-title">Total</h5>
+									<a href="/wh_Reporte" class="stretched-link"> </a>
+									<p class="card-text fs-1 fw-bold text-info" id="TotalAlumnos">45</p>
+								</div>
+								<div class="card-footer bg-transparent border-danger">Total alumnos</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<a href=""></a>
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<h5 class="card-title" href="#">Activos</h5>
+									<a href="/wh_ReporteArticulo" class="stretched-link"> </a>
+									<p class="card-text fs-1 fw-bold text-success" id="TotalAcreditados">375</p>
+								</div>
+								<div class="card-footer bg-transparent border-success">Cuotas acreditadas</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<h5 class="card-title">Vencidos</h5>
+									<a href="/wh_Reporte" class="stretched-link"> </a>
+									<p class="card-text fs-1 fw-bold text-warning" id="TotalVencidos">25</p>
+								</div>
+								<div class="card-footer bg-transparent border-warning">Cuotas pendientes</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card shadow mb-3 bg-body-tertiary rounded">
+								<div class="card-body">
+									<h5 class="card-title">Bajas</h5>
+									<a href="/wh_Criticos" class="stretched-link"> </a>
+									<p class="card-text fs-1 fw-bold text-danger" id="TotalBajas">75</p>
+								</div>
+								<div class="card-footer bg-transparent border-info">Total alumnado de baja</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tabla -->
+				<div class="container text-center pb-1">
+					<div class="card shadow p-2 mb-3 bg-body-tertiary rounded ">
+						<!-- <p class="text-center font-weight-bold bg-dark text-white">Mes actual</p> -->
+
+						<table
+							class="table table-striped table-hover  table-bordered table-sm border-secundary text-center "
+							id="Tabla">
+							<thead class="table-dark">
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nombre</th>
+									<th scope="col">Cuota</th>
+									<th scope="col">Fecha</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Manuel Miranda</td>
+									<td>100</td>
+									<td>02/08/2023</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Lorenzo Morcillo</td>
+									<td>120</td>
+									<td>02/08/2023</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Jose Manuel Sans</td>
+									<td>100</td>
+									<td>03/08/2023</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>Alessandro Sierra</td>
+									<td>150</td>
+									<td>04/08/2023</td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td>Gregorio Cañas</td>
+									<td>150</td>
+									<td>05/08/2023</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Graficas -->
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-4">
+							<div class="card shadow p-2 mb-3 bg-body-tertiary rounded">
+								<div id="donutchart" style="width: 100%; height: 300px;"></div>
+							</div>
+						</div>
+
+						<div class="col-8">
+							<div class="card shadow p-2 mb-3 bg-body-tertiary rounded">
+								<div id="columnchart_values" style="width: 100%; height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- google apis -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<!-- Modals -->
+
+
+
+	<!-- Modal Original-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Alumnado -->
+	<div class="modal fade" id="ModalAlumnado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Alumnado</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+ 
+ 
+
+</body>
+
+</html>

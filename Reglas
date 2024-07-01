@@ -1,0 +1,11 @@
+AFIRME= RFC
+DE LA CUENTA [Banorte]: el numero {interno
+BBVA BANCOMER = RFC
+SANTANDER = RFC
+BANAMEX = RFC
+BANREGIO = RFC
+SCOTIABANK  = RFC
+DEPOSITO EFECTIVO  = Fecha COl {interno
+HSBC = RFC
+STP = RFC
+en cajero Banorte = Fecha COl + ultimo string {interno
